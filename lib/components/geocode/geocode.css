@@ -1,0 +1,65 @@
+.geocode-widget{
+    padding:10px;
+    border: 1px solid #7a7a7a;
+    border-radius: 3px;
+    max-height: 800px;
+    overflow: scroll;
+}
+.file-selector-container{
+    margin: 0;
+    border: 1px solid #7a7a7a;
+    padding:5px;
+    display: flex;
+    flex-direction: column;
+}
+.file-selector-container>u{
+    text-align: center;
+    margin: 3px;
+}
+.file-selector-button{
+    padding: 5px;
+    color: #969696;
+    border: 1px solid #7a7a7a;
+}
+.geocode-header{
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    padding:5px;
+    font-size: 15px;
+    color: #65667a;
+}
+.geocode-address-container{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 5px 10px 0;
+}
+/*.geocode-address-container>input[type="text"]{*/
+    /*flex-grow: 2;*/
+/*}*/
+.geocode-address-row{
+    display: flex;
+}
+
+.results-container{
+    width:100%;
+    padding:5px;
+    display: flex;
+    flex-direction: column;
+}
+.type-input-container{
+  width:250px;
+  display: flex;
+  justify-content: space-around;
+  padding:5px;
+}
+.type-input-container>div{
+  color: #9c9899;
+  font-size: 14px;
+}
+.create-ahjs-container{
+  margin: 0;
+  padding:5px;
+
+}

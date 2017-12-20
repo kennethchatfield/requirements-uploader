@@ -1,0 +1,100 @@
+.add-rules-widget{
+  padding:10px;
+  border: 1px solid #7a7a7a;
+  border-radius: 3px;
+  max-width: 300px;
+  width:100%;
+  display: flex;
+  flex-direction: column;
+}
+.add-rules-header{
+  margin:0;
+  padding:5px;
+  text-align: center;
+  border: 1px solid #7a7a7a;
+}
+.add-rules-input{
+  margin: 5px 0;
+}
+.batch-header{
+  margin: 0;
+  padding:5px;
+  text-align: center;
+  border: 1px solid #7a7a7a;
+
+}
+.batch-container{
+  margin: 0;
+}
+.batch-body{
+  margin: 0;
+}
+.file-selector-container>u{
+  text-align: center;
+  margin: 3px;
+}
+.file-selector-container{
+  margin: 0;
+  border: 1px solid #7a7a7a;
+  padding:5px;
+  display: flex;
+  flex-direction: column;
+}
+.file-selector-button{
+  padding: 5px;
+  color: #969696;
+  border: 1px solid #7a7a7a;
+}
+.rule-input-container{
+  width:250px;
+  display: flex;
+  flex-direction: column;
+  padding:5px;
+}
+.rule-input-container>div{
+  color: #9c9899;
+  font-size: 14px;
+}
+.results-container{
+  padding:10px;
+  margin: 0;
+}
+.results-caption{
+  border: 1px solid #7a7a7a;
+  margin: 0;
+  padding: 5px;
+  text-align: center;
+}
+.results{
+  display: flex;
+  justify-content: space-around;
+}
+.results-column{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.result-value,
+.result-header{
+  padding: 5px;
+}
+.meta-data-container{
+  padding-top:20px;
+  margin:0;
+}
+.meta-data-header{
+  margin: 0;
+  padding:5px;
+  text-align: center;
+  border: 1px solid #7a7a7a;
+}
+.meta-data-body{
+  margin: 0;
+}
+.meta-data-input-container{
+  width:250px;
+  display: flex;
+  flex-direction: column;
+  padding:5px;
+}

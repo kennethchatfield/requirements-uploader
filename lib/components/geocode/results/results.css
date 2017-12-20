@@ -1,0 +1,75 @@
+.results-body{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+.error-container{
+    background-color: rgba(191, 132, 142, 0.69);
+    margin: 0;
+    padding:5px;
+}
+.results-container{
+  width:100%;
+  padding:5px;
+  display: flex;
+  flex-direction: column;
+}
+.results-caption{
+  border: 1px solid #7a7a7a;
+  /*width: 100%;*/
+  display: flex;
+  justify-content: center;
+  padding: 5px 0;
+  margin: 5px 0 0 0;
+}
+.result-headers{
+  margin:0;
+  display:flex;
+  border: 1px solid #7a7a7a;
+  padding: 3px 5px;
+}
+.formatted-address-header{
+  flex-grow: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+}
+.results-overview-container{
+  margin: 0;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+.status-container{
+  display: flex;
+  flex-direction: column;
+  width:150px;
+}
+.status-item-container{
+  display: flex;
+  justify-content: space-between;
+}
+.status-success-count,
+.status-success-label{
+  color: #54cd47
+}
+.status-fail-count,
+.status-fail-label{
+  color: #cd5148
+}
+.create-ahj-container{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+.download-results,
+.create-ahjs{
+  background-color: #7687cd;
+  color: ghostwhite;
+}

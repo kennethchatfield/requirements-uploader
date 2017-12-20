@@ -1,0 +1,25 @@
+.header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  background:red;
+  color:white
+}
+.top-container{
+  width:100%;
+}
+.mid-container{
+  margin:0;
+  width: 100%;
+}
+.app-body{
+  position: absolute;
+  left: 350px;
+  width: 100%;
+}
+.widget-container{
+  display: inline;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}

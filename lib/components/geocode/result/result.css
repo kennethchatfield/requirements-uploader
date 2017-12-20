@@ -1,0 +1,27 @@
+.result-body{
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #c3c3cd;
+}
+.formatted-address-container{
+  padding-left: 7px;
+  flex-grow: 2;
+}
+.location-container{
+  padding: 0 10px;
+}
+.results-data{
+  width:100%;
+  display: flex;
+  justify-content: center;
+}
+.query-string-container{
+  display:flex;
+}
+.query-string{
+  flex-grow: 2;
+}
+.query-string-label{
+  padding-right: 5px;
+}

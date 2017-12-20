@@ -1,0 +1,113 @@
+.left-panel-container{
+  position: fixed;
+  top:0;
+  left:0;
+  width: 300px;
+  height:100%;
+  background-color: #e3e3ee;
+  box-shadow: 1px 0 6px -2px #eeedf9;
+  border: 1px solid #bab9c3;
+  padding:10px;
+}
+.header{
+  display: flex;
+  flex-direction: column;
+  margin:20px;
+}
+.ahj-counts-container{
+  display: flex;
+  flex-direction: column;
+  padding:5px;
+}
+.count-container{
+  display:flex;
+  justify-content: space-between;
+  margin: 0;
+  padding:5px;
+}
+.count-label{
+  color: #7f7f85;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+.count{
+  color: #8c8c93;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+.create-ahjs-text{
+  color: #afaaac;
+}
+.caption{
+  text-align: center;
+  margin: 0;
+  color: #807d7e;
+}
+.database-actions{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+}
+.database-actions>u{
+  text-align: center;
+  color: #807d7e;
+  font-size: 25px;
+}
+.to-table-container,
+.table-select-container{
+  display: flex;
+  justify-content: space-around;
+  width:100%;
+  padding: 10px 0;
+  background-color: #ededf4;
+  margin:10px;
+}
+.clear-table-button{
+  background-color: #d88e82;
+  color: white;
+  width: 125px;
+}
+.upload-items-button{
+  background-color: #95db95;
+  color: white;
+  width: 125px;
+}
+.merge-table-button{
+  background-color: #ffc80c;
+  color: white;
+  width: 125px;
+}
+.merge-tables-container,
+.upload-items-container,
+.delete-items-container{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #bab9c3;
+  width:100%;
+  margin-bottom: 20px;
+}
+.upload-items-container>input,
+.delete-items-container>input{
+  margin:5px;
+}
+.upload-items-container>u,
+.delete-items-container>u{
+  text-align: center;
+  color: #acacb1;
+  margin:5px;
+}
+.upload-query-container,
+.delete-query-container{
+  display: flex;
+  justify-content: space-around;
+}
+.processing-container{
+  position: absolute;
+  bottom: 50px;
+  font-size: 30px;
+  color: #82d88c;
+}
