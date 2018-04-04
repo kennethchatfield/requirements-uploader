@@ -1,5 +1,6 @@
 const express = require('express');
 const AWS = require('aws-sdk');
+const { getItems } = require('../utilitites/aws');
 
 
 const router = express.Router();
@@ -79,6 +80,17 @@ router.route('/batch/')
 
     };
     ddb.batchWriteItem(params, onBatch);
+  });
+
+router.route('/getItems/')
+  .post(function(req,res){
+    console.log('req.body',req.body);
+    const { params } = req.body;
+    getItems( params ).then( Items => {
+      res.send(Items)
+    }).catch(err=>{
+      console.error('Error:',err)
+    })
   });
 
 

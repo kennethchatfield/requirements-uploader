@@ -3,6 +3,14 @@ import cssModules from 'react-css-modules';
 import styles from './leftPanel.css';
 import AnyTable from '../anyTable/AnyTable';
 import DynamobdApi from '../../api/DynamobdApi';
+import { deleteItems,
+  setTableName,
+  uploadItems,
+  loadTable } from '../../actions/databaseActions';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import config from '../../../config'
+import { toTitleCase } from '../../utilities/utilities';
 
 class LeftPanel extends React.Component {
   constructor(props, context){
@@ -10,7 +18,7 @@ class LeftPanel extends React.Component {
     this.toTableChange = this.toTableChange.bind(this);
     this.mergeTables = this.mergeTables.bind(this);
     this.state = {
-
+      filter:null
     };
   }
 
@@ -35,10 +43,25 @@ class LeftPanel extends React.Component {
       this.setState({processing:null});
     })
   }
+  // updateFilter
+  // addFilter(index){
+  //   const { filter } = this.state;
+  //
+  // }
 
   render(){
-    const { tableData } = this.state;
-    const { createdAhjs, existingAhjs, tableChange, deleteItems, processing, uploadItems } = this.props;
+    const { tableData, filter } = this.state;
+    const {
+      createdAhjs,
+      existingAhjs,
+      setTableName,
+      loadTable,
+      deleteItems,
+      processing,
+      uploadItems,
+      tableName,
+      env
+    } = this.props;
     const handleDeleteItems = () => {
       const { query } = this.state;
       if(query) deleteItems(query.key,query.value);
@@ -47,10 +70,13 @@ class LeftPanel extends React.Component {
     const handleUploadItems = () => {
       const { query } = this.state;
       console.log('handleUploadItems');
-      if(query) uploadItems(query.key,query.value);
+      if(query) uploadItems({key:query.key,value:query.value});
       else uploadItems();
     };
     const noRules = existingAhjs.filter(ahj=>{ return !ahj.rules });
+    const getTableOptions = ( !env ? config.dynamo.tables : Object.values(config[env].tables ) ).map( ( table, index ) => {
+      return <option key={index} value={table}>{toTitleCase(table)}</option>
+    });
     return (
       <div styleName="left-panel-container">
         {
@@ -82,16 +108,34 @@ class LeftPanel extends React.Component {
         <div styleName="database-actions">
           <u>Database Actions</u>
           <div styleName="table-select-container">
-            <div>Table:</div>
-            <select onChange={(e)=>{tableChange(e)}}>
-              <option value={null}>...</option>
-              <option value="ahj-stage">AHJ Stage</option>
-              <option value="ahj-prod">AHJ Prod</option>
-              <option value="ahj-dev">AHJ Dev</option>
-              <option value="ahj-definitions-prod">Definitions Prod</option>
-              <option value="ahj-definitions-stage">Definitions Stage</option>
-              <option value="ahj-definitions-dev">Definitions Dev</option>
-            </select>
+            <div style={{display:'flex'}}>
+              <div>{tableName?'Active Table:':'Activate Table'}</div>
+              <select onChange={(e)=>{setTableName(e.target.value)}}>
+                <option value={null}>...</option>
+                <option value="ahj-temp">AHJ TEMP</option>
+                <option value="ahj-new">AHJ NEW</option>
+                { getTableOptions }
+              </select>
+            </div>
+            <input styleName="load-table-button" type="submit" value="Load Table" onClick={loadTable} />
+          </div>
+
+          <div styleName="filters-container">
+            <u>Build Filters</u>
+            <div styleName="items-container">
+              { filter &&
+                filter.map((item,index)=>{
+                  return (
+                    <div key={index} styleName="filter-item-container">
+                      <input name="key" type="text" placeholder="key" />
+                      <input name="value" type="text" placeholder="value" />
+                    </div>
+                  );
+                })
+              }
+
+            </div>
+            <input type="submit" value="Add Filter" styleName="add-filter-button" />
           </div>
 
           <div styleName="upload-items-container">
@@ -123,6 +167,11 @@ class LeftPanel extends React.Component {
                 <option value="ahj-definitions-prod">Definitions Prod</option>
                 <option value="ahj-definitions-stage">Definitions Stage</option>
                 <option value="ahj-definitions-dev">Definitions Dev</option>
+                <option value="ahj-revisions-prod">Revisions Prod</option>
+                <option value="ahj-revisions-stage">Revisions Stage</option>
+                <option value="ahj-revisions-dev">Revisions Dev</option>
+                <option value="ahj-temp">AHJ TEMP</option>
+                <option value="ahj-new">AHJ NEW</option>
               </select>
             </div>
             <input type="submit" value="Merge Tables" styleName="merge-table-button" onClick={this.mergeTables} />
@@ -140,4 +189,29 @@ class LeftPanel extends React.Component {
   }
 }
 
-export default cssModules(LeftPanel, styles)
+const mapDispatchToProps = (dispatch) => {
+  return Object.assign({},
+    bindActionCreators({ setTableName }, dispatch),
+    bindActionCreators({ loadTable }, dispatch),
+    bindActionCreators({ deleteItems }, dispatch),
+    bindActionCreators({ uploadItems }, dispatch)
+  )
+};
+
+const mapStateToProps = (state, ownProps) => {
+  const { database, global, definitions, environment  } = state;
+  const { createdAhjs, existingAhjs, tableName } = database;
+  const { processing } = global;
+
+  return {
+    tableName,
+    createdAhjs,
+    existingAhjs,
+    processing,
+    definitions,
+    env: environment.active
+  }
+};
+const leftPanelExport = cssModules(LeftPanel, styles);
+
+export default connect(mapStateToProps, mapDispatchToProps)(leftPanelExport)

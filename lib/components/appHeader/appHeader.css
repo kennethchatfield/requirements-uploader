@@ -1,0 +1,67 @@
+.header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  background: #f3a9ae;
+  color:white;
+  display: flex;
+}
+.active-env-container{
+  display: flex;
+}
+.change-active-env{
+  display: flex;
+  flex-direction: column;
+  margin-right: 75px;
+}
+.active-env-label{
+  margin-right: 20px;
+}
+.active-env-text{
+  margin-left: 10px;
+}
+.env-drop-down{
+  position: absolute;
+}
+.selected-env{
+  text-align: center;
+  width: 150px;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+}
+.env-drop-down-container{
+  position: relative;
+}
+.env-option{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 30px;
+  background: #f3a9ae;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  border-top: 1px solid white;
+}
+.toggle-view-container{
+  margin-left:75px;
+  display: flex;
+  flex-grow: 1;
+}
+.toggle-view-label{
+  margin-right: 20px;
+}
+.change-view-container{
+  display: flex;
+  flex-direction: column;
+}
+/*.selected-view{*/
+
+/*}*/
+/*.view-drop-down-container{*/
+
+/*}*/
+/*.view-drop-down{*/
+
+/*}*/

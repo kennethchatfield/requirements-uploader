@@ -5,6 +5,8 @@ import definitions from './serv/routes/definitions';
 import geocode from './serv/routes/geocode';
 import dynamodb from './serv/routes/dynamodb';
 import bodyParser from 'body-parser'
+// import webpackConfig from './webpack.config';
+// import webpack from 'webpack';
 
 AWS.config.update({
     region: "us-west-2",
@@ -30,6 +32,17 @@ app.get('/', (req,res)=>{
 app.use('/api/definitions', definitions);
 app.use('/api/geocode', geocode);
 app.use('/api/dynamodb', dynamodb);
+
+
+
+// const compiler = webpack(webpackConfig);
+
+// app.use(require('webpack-hot-middleware')(compiler));
+// app.use(require('webpack-dev-middleware')(compiler, {
+//   noInfo: true,
+//   publicPath: config.output.publicPath,
+// }));
+
 
 
 app.listen(config.port, function listenHandler(){

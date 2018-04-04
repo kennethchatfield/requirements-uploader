@@ -1,0 +1,46 @@
+.mutate-something-container,
+.mutate-body,
+.mutate-wrapper{
+  display: flex;
+  flex-direction: column;
+}
+.mutate-wrapper{
+  background-color: #f4f4f4;
+  border: 1px solid #dadada;
+  max-width: 60%;
+}
+.mutate-caption{
+  margin: 0;
+  text-align: left;
+  background-color: #c3dee1;
+  border-bottom: 1px solid #dadada;
+  padding: 5px 10px;
+}
+.mutate-something-container{
+  margin: 0;
+  padding: 5px;
+}
+.mutate-something{
+
+}
+.mutate-something-header{
+  margin: 0;
+  padding: 5px;
+}
+.mutate-container{
+  display: flex;
+  flex-direction: column;
+}
+.submit-container{
+  text-align: left;
+  margin-right: 20px;
+}
+.mutate-results-container{
+  padding-top: 20px;
+}
+.mutate-page{
+  position: absolute;
+  left: 350px;
+  width: 100%;
+  top:75px;
+}

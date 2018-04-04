@@ -66,6 +66,14 @@
   background-color: #ededf4;
   margin:10px;
 }
+.table-select-container{
+  flex-direction: column;
+}
+.load-table-button{
+  width: 100px;
+  position: relative;
+  left: 200px;
+}
 .clear-table-button{
   background-color: #d88e82;
   color: white;
@@ -81,6 +89,7 @@
   color: white;
   width: 125px;
 }
+.filters-container,
 .merge-tables-container,
 .upload-items-container,
 .delete-items-container{
@@ -94,12 +103,14 @@
 .delete-items-container>input{
   margin:5px;
 }
+.filters-container>u,
 .upload-items-container>u,
 .delete-items-container>u{
   text-align: center;
   color: #acacb1;
   margin:5px;
 }
+.filter-item-container,
 .upload-query-container,
 .delete-query-container{
   display: flex;
@@ -110,4 +121,13 @@
   bottom: 50px;
   font-size: 30px;
   color: #82d88c;
+}
+.add-filter-button{
+  background-color: #e5b540;
+  color: white;
+  width: 125px;
+}
+.items-container{
+  display: flex;
+  flex-direction: column;
 }

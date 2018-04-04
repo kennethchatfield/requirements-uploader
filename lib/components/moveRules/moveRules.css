@@ -1,0 +1,112 @@
+.manip-rules-widget{
+  border: 1px solid #7a7a7a;
+  border-radius: 3px;
+  max-height: 800px;
+  overflow: scroll;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+}
+.manip-rules-caption{
+  text-align: center;
+  width:100%;
+}
+.manip-rules-body{
+  display:flex;
+  flex-direction: column;
+  margin: 0;
+}
+.validation-results-container,
+.rule-existence-container,
+.delete-rule-container,
+.move-rule-container{
+  margin: 0;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.invalid-existence-container,
+.not-found-container,
+.found-container,
+.existing-rule-container,
+.exist-in-container,
+.rule-to-delete-container,
+.delete-from-container,
+.paste-to-container,
+.cut-from-container,
+.applied-rules-container{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.not-found-label,
+.invalid-existence-label,
+.found-rule-label,
+.existing-rule-label,
+.exist-in-label,
+.rule-to-delete-label,
+.delete-from-label,
+.paste-to-label,
+.applied-rules-label,
+.cut-from-label{
+  font-size: 12px;
+  text-align: center;
+}
+.submit-button-container{
+  margin: 0;
+  text-align: right;
+  padding: 5px 10px;
+}
+.validation-results-body,
+.rule-existence-inputs,
+.delete-rule-inputs,
+.cut-paste-container{
+  display: flex;
+  margin: 0;
+  padding: 5px;
+}
+.validation-results-label,
+.rule-existence-label,
+.delete-rule-label,
+.move-rule-label{
+  margin:0;
+  text-align: center;
+  font-size: 12px;
+}
+.does-container{
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  padding-right: 5px;
+}
+.invalid-existence-count,
+.found-count,
+.not-found-count{
+  text-align: center;
+}
+.additional-scripts-container{
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  margin-bottom: 10px;
+}
+.scripts-caption{
+  font-size: 16px;
+  color: #807d7e;
+  text-align: center;
+}
+.additional-scripts{
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  margin-top: 5px;
+}
+.script-item{
+  display:flex;
+  margin: 0;
+  justify-content: space-around;
+}
+.script-label{
+  font-size: 12px;
+  color: #807d7e;
+}
