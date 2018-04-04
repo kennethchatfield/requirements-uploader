@@ -1,0 +1,18 @@
+.top-container{
+  width:100%;
+}
+.mid-container{
+  margin:0;
+  width: 100%;
+}
+.app-body{
+  position: absolute;
+  left: 350px;
+  width: 100%;
+  top:75px;
+}
+.widget-container{
+  display: inline;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}

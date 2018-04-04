@@ -1,0 +1,45 @@
+.rule-metrics-container{
+  width:100%;
+  display: flex;
+  flex-direction: column;
+}
+.lvl-container{
+  display: flex;
+  flex-direction: column;
+}
+.lvl-label-container{
+  margin-left:5px;
+  display:flex;
+}
+.lvl-metrics-container{
+  display:flex;
+}
+.lvl-metrics{
+  padding-left: 10px;
+  display:flex;
+}
+.children-container{
+  display:flex;
+  flex-direction: column;
+}
+.count-label{
+
+}
+.count-text{
+}
+.lvl-name{
+
+}
+.lvl-label{
+
+}
+.lvl-header-container{
+  display: flex;
+}
+.lvl-header{
+  display: flex;
+  flex-direction:column;
+}
+.export-results-container{
+
+}

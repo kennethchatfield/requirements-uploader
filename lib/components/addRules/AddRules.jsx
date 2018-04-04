@@ -17,9 +17,9 @@ class AddRules extends React.Component {
     let cb = (results)=>{
       this.setState({ results })
     };
-      if(files.length>1){
+      if( files.length > 1 ){
         multiple = true;
-        cb = (resul)=>{
+        cb = (resul) => {
           let { results } = this.state;
           results = [...results||[], resul];
           this.setState({ results })
@@ -69,7 +69,7 @@ class AddRules extends React.Component {
   render(){
     const { definitions, createAhjs, multiple } = this.props;
     const { results,fileName } = this.state;
-    // console.log('results!!!!!!!!!!!!!!!\n',results);
+    console.log('results!!!!!!!!!!!!!!!\n',results);
     // console.log('fileName!!!!!!!!!!!!!!!\n',fileName);
     return (
       <div styleName="add-rules-widget">

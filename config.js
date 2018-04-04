@@ -4,5 +4,42 @@ module.exports = {
     secret:"d3tVQ80et02Mt4qDDcLGbeGUXrU=",
     geocodeUrl:"https://maps.googleapis.com/maps/api/geocode/json?",
     client:"gme-solmetriccorporation"
+  },
+  dev:{
+    name:"Develop",
+    tables:{
+      ahj:'ahj-dev',
+      definitions:'ahj-definitions-dev',
+      revisions:'ahj-revisions-dev'
+    }
+  },
+  stage:{
+    name:"Stage",
+    tables:{
+      ahj:'ahj-stage',
+      definitions:'ahj-definitions-stage',
+      revisions:'ahj-revisions-stage'
+    }
+  },
+  prod:{
+    name:"Production",
+    tables:{
+      ahj:'ahj-prod',
+      definitions:'ahj-definitions-prod',
+      revisions:'ahj-revisions-prod'
+    }
+  },
+  dynamo:{
+    tables:[
+      'ahj-dev',
+      'ahj-definitions-dev',
+      'ahj-revisions-dev',
+      'ahj-stage',
+      'ahj-definitions-stage',
+      'ahj-revisions-stage',
+      'ahj-prod',
+      'ahj-definitions-prod',
+      'ahj-revisions-prod',
+    ]
   }
 };

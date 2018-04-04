@@ -1,14 +1,14 @@
 const fetch = require('node-fetch');
 
-module.exports = function(url) {
+module.exports = url => {
     return new Promise((resolve, reject)=>{
         fetch(url)
-            .then(function(res) {
+            .then( res => {
                 console.log('res',res);
                 return res.json();
-            }).then(function(json) {
+            }).then( json => {
                 resolve(json);
-            }).catch(err=>{
+            }).catch( err => {
             console.error('Error: ',reject);
                 reject(err);
             });

@@ -6,7 +6,8 @@ const config = {
     entry: [
         'whatwg-fetch',
         'babel-polyfill',
-        './lib/components/index'
+        'webpack-hot-middleware/client?reload=true', //note that it reloads the page if hot module reloading fails
+        './lib/index'
     ],
     output: {
         path: path.resolve(__dirname, 'src'),
