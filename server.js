@@ -4,9 +4,11 @@ import AWS from 'aws-sdk';
 import definitions from './serv/routes/definitions';
 import geocode from './serv/routes/geocode';
 import dynamodb from './serv/routes/dynamodb';
+import mutate from './serv/routes/mutate';
 import bodyParser from 'body-parser'
 // import webpackConfig from './webpack.config';
 // import webpack from 'webpack';
+import path from 'path';
 
 AWS.config.update({
     region: "us-west-2",
@@ -21,17 +23,36 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
-app.use(express.static('src'));
+// app.use(express.static('src'));
 
-app.set('view engine', 'ejs');
+if (process.env.WATCH) {
+  app.use(express.static(path.join(__dirname, 'lib')));
+} else {
+  app.use(express.static(path.join(__dirname, 'src')));
+}
 
-app.get('/', (req,res)=>{
-    res.render( 'index', { answer: 77 } );
-});
+// app.set('view engine', 'ejs');
+
+// app.get('/', (req,res)=>{
+//     res.render( 'index', { answer: 77 } );
+// });
 
 app.use('/api/definitions', definitions);
 app.use('/api/geocode', geocode);
 app.use('/api/dynamodb', dynamodb);
+app.use('/api/mutate', mutate);
+
+if (process.env.WATCH) {
+  const config = require('./webpack.config');
+  const webpack = require('webpack');
+  const compiler = webpack(config);
+
+  app.use(require('webpack-hot-middleware')(compiler));
+  app.use(require('webpack-dev-middleware')(compiler, {
+    noInfo: true,
+    publicPath: config.output.publicPath,
+  }));
+}
 
 
 
@@ -43,8 +64,13 @@ app.use('/api/dynamodb', dynamodb);
 //   publicPath: config.output.publicPath,
 // }));
 
+app.use('*', function (request, response){
+  response.sendFile(path.resolve(__dirname, 'views', 'index.html'))
+});
 
 
 app.listen(config.port, function listenHandler(){
     console.info(`Running on ${config.port}...`);
 });
+
+module.exports = app;

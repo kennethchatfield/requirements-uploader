@@ -47,10 +47,10 @@ router.route('/put/')
     const { params } = req.body;
     docClient.put(params, function(err, data) {
       if (err) {
-        console.error("Unable to delete item. Error JSON:", JSON.stringify(err, null, 2));
+        console.error("Unable to Put item. Error JSON:", JSON.stringify(err, null, 2));
       } else {
         res.send(data);
-        console.log("DeleteItem succeeded:", JSON.stringify(data, null, 2));
+        console.log("Put Item succeeded:", JSON.stringify(data, null, 2));
       }
     });
   });

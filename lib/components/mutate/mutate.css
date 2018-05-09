@@ -1,3 +1,11 @@
+.mutate-page{
+  position: absolute;
+  left: 325px;
+  top:30px;
+  right: 20px;
+  bottom: 20px;
+  overflow: scroll;
+}
 .mutate-something-container,
 .mutate-body,
 .mutate-wrapper{
@@ -5,9 +13,9 @@
   flex-direction: column;
 }
 .mutate-wrapper{
-  background-color: #f4f4f4;
+  background-color: #F9F9F9;
   border: 1px solid #dadada;
-  max-width: 60%;
+  margin:0;
 }
 .mutate-caption{
   margin: 0;
@@ -32,15 +40,32 @@
   flex-direction: column;
 }
 .submit-container{
+  padding-top: 20px;
   text-align: left;
+  /*margin: 0;*/
+
+}
+.submit-container>*{
+  display: inline-block;
   margin-right: 20px;
 }
 .mutate-results-container{
   padding-top: 20px;
+  margin: 0;
 }
-.mutate-page{
-  position: absolute;
-  left: 350px;
-  width: 100%;
-  top:75px;
+.load-code-label,
+.theme-label{
+
+}
+.custom-mutate-toolbar{
+  display: flex;
+  margin: 0;
+}
+.load-code-container,
+.change-theme-container{
+  display: flex;
+  flex-direction: column;
+}
+.load-code-container{
+  padding-left: 20px;
 }
