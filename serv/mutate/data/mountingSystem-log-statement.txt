@@ -1,0 +1,6 @@
+(function (item,index) {
+	if(item.rules.mountingSystem){
+      console.log(item.mountingSystem);
+    }
+	return item;
+})

@@ -1,0 +1,19 @@
+(function (item,index) {
+	if(item.rules.overSizing){
+      item.rules.overSizing.statements = item.rules.overSizing.statements.map(function(statement){
+          let newStatement = {
+            value: {
+              company: statement.value
+            }
+          };
+          if(statement.condition){
+              newStatement.condition = statement.condition;
+          }
+          if(statement.desciption){
+              newStatement.desciption = statement.desciption;
+          }
+          return newStatement;
+      })
+    }
+	return item;
+})

@@ -1,0 +1,29 @@
+(function (item,index) {
+	if(item.rules.overSizing){
+	    const overSizing = Object.assign({},
+            item.rules.overSizing,
+            {
+                statements: item.rules.overSizing.statements.map( statement => (
+                    Object.assign({},
+                        statement,
+                        {
+                            value: {
+                                company: statement.value
+                            }
+                        }
+                    )
+                ))
+            }
+        )
+        item = Object.assign({},
+            item,
+            {
+                rules: Object.assign({},
+                    item.rules,
+                    { overSizing }
+                )
+            }
+        )
+	}
+	return item;
+})

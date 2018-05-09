@@ -1,0 +1,6 @@
+(function (item,index) {
+	if(item.rules.oversizing){
+      console.log(item.oversizing);
+    }
+	return item;
+})
